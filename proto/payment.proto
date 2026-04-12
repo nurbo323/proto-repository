@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package payment.v1;
 
-option go_package = "https://github.com/nurbo323/generated-contracts";
+option go_package = "github.com/nurbo323/generated-contracts/gen/payment;paymentv1";
 
 import "google/protobuf/timestamp.proto";
 
