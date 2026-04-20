@@ -8,6 +8,7 @@ import "google/protobuf/timestamp.proto";
 
 service PaymentService {
   rpc ProcessPayment (PaymentRequest) returns (PaymentResponse);
+  rpc GetPaymentStats (GetPaymentStatsRequest) returns (PaymentStats);
 }
 
 message PaymentRequest {
@@ -22,4 +23,13 @@ message PaymentResponse {
   int64 amount = 4;
   string status = 5;
   google.protobuf.Timestamp processed_at = 6;
+}
+
+message GetPaymentStatsRequest {}
+
+message PaymentStats {
+  int64 total_count = 1;
+  int64 authorized_count = 2;
+  int64 declined_count = 3;
+  int64 total_amount = 4;
 }
